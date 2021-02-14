@@ -19,6 +19,7 @@ function startGame(){
 /* Desenhar as cartas */
 function initializeCards(cards){
     gameBoard = document.getElementById('gameBoard')
+    gameBoard.innerHTML = '';
     
     game.cards.forEach(card =>{
        
@@ -89,4 +90,13 @@ function flipCard(){
             }
         }
     }
+}
+
+
+function restart(){
+    game.clearCards();
+    startGame()
+    let gameOverLayer = document.getElementById("gameOver");
+    gameOverLayer.style.display = 'none';
+
 }
